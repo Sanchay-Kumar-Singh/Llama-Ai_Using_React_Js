@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
 html {
@@ -20,6 +19,7 @@ body {
     display: flex;
 }
 
+/* ========== SIDEBAR ========== */
 .sideBar {
     flex: 3;
     border-right: 1px solid rgb(100, 100, 100);
@@ -34,7 +34,8 @@ body {
 }
 
 .brand {
-    font-size: 2rem;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .upperSide {
@@ -52,7 +53,6 @@ body {
 .addBtn {
     height: 2rem;
     padding-right: 1rem;
-
 }
 
 .midBtn {
@@ -65,53 +65,43 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
-    margin-bottom: 3rem;
+    margin: 0 auto 3rem auto;
     border-radius: 0.5rem;
-
 }
 
 .query {
     display: flex;
-  align-items: center;
- background: transparent;
- color: rgba(222,222,222,1);
-  padding: 1.4rem;
-  width: 25rem;
-  margin: 1rem auto;
-   border-radius: 0.5rem;
-   border: 1px solid rgba(98,98,98,1);
+    align-items: center;
+    background: transparent;
+    color: rgba(222, 222, 222, 1);
+    padding: 1.4rem;
+    width: 25rem;
+    margin: 1rem auto;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(98, 98, 98, 1);
 }
-.query>img{
+.query > img {
     margin-right: 2rem;
-    object-fit: cover;
     height: 1.75rem;
 }
-.lowerSide{
+
+.lowerSide {
     padding: 2rem;
 }
-.listItems{
-    margin: 0.75rem;
+
+.listItems {
+    margin: 0.75rem 0;
     display: flex;
     align-items: center;
     font-size: 1.3rem;
-  
+}
 
+.listItemsImg {
+    margin-right: 1rem;
 }
-.listItmesImg{
-    margin:1rem;
-    padding-right:1rem ;
-}
-.listItems:nth-child(1)>.listItemsImg{
-    margin-right:0.5rem ;
-}
-.listItems:nth-child(2)>.listItemsImg{
-    margin-right:1rem ;
-}
-.listItems:nth-child(3)>.listItemsImg{
-    margin-right:0.75rem ;
-}
-.main{
+
+/* ========== MAIN CHAT AREA ========== */
+.main {
     min-height: calc(100vh - 14rem);
     display: flex;
     flex-direction: column;
@@ -119,70 +109,153 @@ body {
     margin: 6rem 10rem;
     margin-bottom: 0;
 }
-.chats{
-    overflow-x: hidden;
+
+.chats {
     overflow-y: auto;
     scroll-behavior: smooth;
     width: 100%;
     max-width: 70rem;
-    height: calc(100vh -   17rem);
+    height: calc(100vh - 17rem);
 }
-.chat{
+
+.chat {
     margin: 1rem;
     padding: 2rem 3rem;
     font-size: 1.2rem;
     display: flex;
-    align-items:flex-start;
+    align-items: flex-start;
     text-align: justify;
+}
 
+.chatImg {
+    width: 3.5rem;
+    margin-right: 2rem;
+    border-radius: 0.5rem;
+    object-fit: cover;
 }
-.chatImg{
-    object-fit:cover;
-     width: 3.5rem;
-     margin-right: 2rem;
-     border-radius: 0.5rem;
-}
-.bot{
-    background: rgba(28,30,58,1);
+
+.bot {
+    background: rgba(28, 30, 58, 1);
     width: fit-content;
     border-radius: 0.5rem;
 }
-.chatFooter{
-margin-top: auto;
-width: 100%;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-}
-.inp{
- padding: 0.5rem;
- background: rgba(28,30, 58,1);
- display: flex;
- align-items: center;
- border-radius:0.5rem ;
- width:68rem;
 
-
-}
-.inp>input{
-    width: calc(100% - 3rem);
-    outline: none;
-    padding:1.25rem;
-    color: white;
-}
-.inp>input,.send{
-    background: transparent;
-    border: none;
-}
-.chatFooter>p{
-margin: 2rem 0;
-}
-.txt{
+.txt {
     line-height: 2.4rem;
     color: white;
 }
-.brand{
-    font-weight: bold;
-    font-size: 30px;
+
+/* ========== FOOTER ========== */
+.chatFooter {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inp {
+    padding: 0.5rem;
+    background: rgba(28, 30, 58, 1);
+    display: flex;
+    align-items: center;
+    border-radius: 0.5rem;
+    width: 68rem;
+}
+
+.inp > input {
+    width: calc(100% - 3rem);
+    outline: none;
+    padding: 1.25rem;
+    color: white;
+}
+
+.inp > input,
+.send {
+    background: transparent;
+    border: none;
+}
+
+.chatFooter > p {
+    margin: 2rem 0;
+}
+
+/* =======================================================
+   MOBILE RESPONSIVE (ONLY small screens)
+   Big screen remains unchanged
+   ======================================================= */
+@media (max-width: 600px) {
+
+    .App {
+        flex-direction: column;
+    }
+
+    .sideBar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid rgb(100, 100, 100);
+        padding: 1rem 2rem;
+    }
+
+    .midBtn,
+    .query {
+        width: 100%;
+    }
+
+    .main {
+        width: 100%;
+        flex: none;
+        margin: 1rem;
+        margin-bottom: 0;
+    }
+
+    .chats {
+        width: 100%;
+        max-width: 100%;
+        height: calc(100vh - 25rem);
+        padding-right: 0.5rem;
+    }
+
+    .chat {
+        margin: 0.7rem 0;
+        padding: 1.5rem 1.8rem;
+        font-size: 1.3rem;
+    }
+
+    .chatImg {
+        width: 3rem;
+        margin-right: 1.2rem;
+    }
+
+    .inp {
+        width: 100%;
+        padding: 0.6rem;
+    }
+
+    .inp > input {
+        padding: 1.2rem;
+        font-size: 1.35rem;
+    }
+
+    .send img {
+        width: 2.4rem;
+    }
+
+    .chatFooter > p {
+        font-size: 1.1rem;
+    }
+}
+
+/* Extra small phones */
+@media (max-width: 400px) {
+    .chat {
+        padding: 1.2rem;
+        font-size: 1.2rem;
+    }
+    .chatImg {
+        width: 2.7rem;
+    }
+    .inp > input {
+        font-size: 1.25rem;
+    }
 }
