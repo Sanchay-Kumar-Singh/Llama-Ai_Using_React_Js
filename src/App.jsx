@@ -79,7 +79,7 @@ const App = () => {
             </button>
 
             <div className="upperSideBottom">
-              <button className="query" onClick={handleQuery} value={"What is Programming ?"}>
+              <button className="query" onClick={handleQuery} value={"What is Programming ? "}>
                 <img src={msgIcon} alt="Query" />What is Programming
               </button>
               <button className="query" onClick={handleQuery} value={"What is API ?"}>
