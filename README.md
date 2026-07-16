@@ -2,7 +2,7 @@
 
 Llama AI Chat is an AI-powered chat application built with ReactJS and CSS, integrated with Llama3 APIs for real-time intelligent responses. This project demonstrates how modern AI can be embedded into a web app for interactive conversations.
 
-🌐 Live Demo -->
+🌐 Live Demo --->
 
 https://llama-ai-using-react-js.vercel.app/
 
