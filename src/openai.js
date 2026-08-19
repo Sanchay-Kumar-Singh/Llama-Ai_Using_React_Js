@@ -11,7 +11,7 @@ if (!groqApiKey) {
 
 const groq = new ChatGroq({
   apiKey: groqApiKey,
-  model: "llama-3.3-70b-versatile",
+  model: "openai/gpt-oss-120b",
 });
 
 export async function sendMsgToOpenAI(message) {

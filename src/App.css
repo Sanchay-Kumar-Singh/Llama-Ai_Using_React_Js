@@ -19,7 +19,10 @@ body {
     display: flex;
 }
 
-/* ========== SIDEBAR ========== */
+/* =======================================================
+   SIDEBAR
+======================================================= */
+
 .sideBar {
     flex: 3;
     border-right: 1px solid rgb(100, 100, 100);
@@ -67,6 +70,7 @@ body {
     justify-content: center;
     margin: 0 auto 3rem auto;
     border-radius: 0.5rem;
+    cursor: pointer;
 }
 
 .query {
@@ -79,7 +83,13 @@ body {
     margin: 1rem auto;
     border-radius: 0.5rem;
     border: 1px solid rgba(98, 98, 98, 1);
+    cursor: pointer;
 }
+
+.query:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
 .query > img {
     margin-right: 2rem;
     height: 1.75rem;
@@ -94,13 +104,18 @@ body {
     display: flex;
     align-items: center;
     font-size: 1.3rem;
+    cursor: pointer;
 }
 
 .listItemsImg {
     margin-right: 1rem;
 }
 
-/* ========== MAIN CHAT AREA ========== */
+
+/* =======================================================
+   MAIN CHAT AREA
+======================================================= */
+
 .main {
     min-height: calc(100vh - 14rem);
     display: flex;
@@ -118,34 +133,291 @@ body {
     height: calc(100vh - 17rem);
 }
 
+/* Scrollbar */
+
+.chats::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chats::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chats::-webkit-scrollbar-thumb {
+    background: rgba(100, 100, 100, 0.5);
+    border-radius: 10px;
+}
+
+.chats::-webkit-scrollbar-thumb:hover {
+    background: rgba(150, 150, 150, 0.7);
+}
+
+
+/* =======================================================
+   CHAT
+======================================================= */
+
 .chat {
     margin: 1rem;
     padding: 2rem 3rem;
     font-size: 1.2rem;
     display: flex;
     align-items: flex-start;
-    text-align: justify;
+    text-align: left;
 }
 
 .chatImg {
     width: 3.5rem;
+    min-width: 3.5rem;
+    height: 3.5rem;
     margin-right: 2rem;
     border-radius: 0.5rem;
     object-fit: cover;
 }
 
 .bot {
-    background: rgba(28, 30, 58, 1);
+    background: rgb(16, 18, 45);
     width: fit-content;
+    max-width: 100%;
     border-radius: 0.5rem;
 }
 
 .txt {
     line-height: 2.4rem;
     color: white;
+    min-width: 0;
+    width: 100%;
 }
 
-/* ========== FOOTER ========== */
+
+/* =======================================================
+   AI RESPONSE
+======================================================= */
+
+.botResponse {
+    width: 100%;
+    max-width: 100%;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+
+/* ---------- Paragraph ---------- */
+
+.responseParagraph {
+    margin: 0 0 1.5rem 0;
+    line-height: 1.8;
+}
+
+.responseParagraph:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ---------- Heading ---------- */
+
+.responseHeading {
+    margin: 2.4rem 0 1.2rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: white;
+}
+
+.responseHeading:first-child {
+    margin-top: 0;
+}
+
+
+/* ---------- Empty Space ---------- */
+
+.responseSpace {
+    height: 0.5rem;
+}
+
+
+/* ---------- Bullet List ---------- */
+
+.responseBullet {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin: 0.7rem 0;
+    padding-left: 0.5rem;
+    line-height: 1.8;
+}
+
+.bulletIcon {
+    min-width: 1.2rem;
+    font-size: 1.8rem;
+    line-height: 1.5;
+}
+
+
+/* ---------- Numbered List ---------- */
+
+.responseNumber {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin: 0.8rem 0;
+    line-height: 1.8;
+}
+
+.numberIcon {
+    min-width: 2.6rem;
+    font-weight: 600;
+}
+
+
+/* ---------- Bold ---------- */
+
+.botResponse strong {
+    font-weight: 700;
+    color: white;
+}
+
+
+/* ---------- Italic ---------- */
+
+.botResponse em {
+    font-style: italic;
+}
+
+
+/* ---------- Inline Code ---------- */
+
+.inlineCode {
+    padding: 0.25rem 0.6rem;
+    border-radius: 0.5rem;
+    background: rgba(127, 127, 127, 0.2);
+    color: #e8e8e8;
+    font-family: Consolas, Monaco, "Courier New", monospace;
+    font-size: 1.2rem;
+}
+
+
+/* ---------- Blockquote ---------- */
+
+.responseQuote {
+    margin: 1.4rem 0;
+    padding: 1rem 1.5rem;
+    border-left: 4px solid #777;
+    border-radius: 0.4rem;
+    background: rgba(127, 127, 127, 0.08);
+    font-style: italic;
+    color: #ddd;
+}
+
+
+/* ---------- Horizontal Line ---------- */
+
+.responseHr {
+    margin: 2rem 0;
+    border: none;
+    border-top: 1px solid rgba(127, 127, 127, 0.3);
+}
+
+
+/* =======================================================
+   CODE BLOCK
+======================================================= */
+
+.codeBlock {
+    width: 100%;
+    margin: 1.6rem 0;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.9rem;
+    background: #111;
+}
+
+
+/* Code Header */
+
+.codeHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 1.4rem;
+    background: #1d1d1d;
+    color: #aaa;
+    font-size: 1.2rem;
+}
+
+
+/* Copy Button */
+
+.codeHeader button {
+    padding: 0.4rem 0.9rem;
+    border: none;
+    border-radius: 0.4rem;
+    background: transparent;
+    color: #aaa;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.codeHeader button:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* Code Area */
+
+.codeBlock pre {
+    margin: 0;
+    padding: 1.6rem;
+    overflow-x: auto;
+    white-space: pre;
+}
+
+
+/* Code Text */
+
+.codeBlock code {
+    color: #f5f5f5;
+    font-family: Consolas, Monaco, "Courier New", monospace;
+    font-size: 1.2rem;
+    line-height: 1.7;
+}
+
+
+/* Code Scrollbar */
+
+.codeBlock pre::-webkit-scrollbar {
+    height: 6px;
+}
+
+.codeBlock pre::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.codeBlock pre::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 10px;
+}
+
+
+/* =======================================================
+   USER MESSAGE
+======================================================= */
+
+.userMessage {
+    margin: 0;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+
+/* =======================================================
+   FOOTER
+======================================================= */
+
 .chatFooter {
     margin-top: auto;
     width: 100%;
@@ -176,14 +448,30 @@ body {
     border: none;
 }
 
+.inp > input::placeholder {
+    color: #aaa;
+}
+
+.send {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.send img {
+    width: 2rem;
+}
+
 .chatFooter > p {
     margin: 2rem 0;
 }
 
+
 /* =======================================================
-   MOBILE RESPONSIVE (ONLY small screens)
-   Big screen remains unchanged
-   ======================================================= */
+   MOBILE RESPONSIVE
+======================================================= */
+
 @media (max-width: 600px) {
 
     .App {
@@ -224,7 +512,31 @@ body {
 
     .chatImg {
         width: 3rem;
+        min-width: 3rem;
+        height: 3rem;
         margin-right: 1.2rem;
+    }
+
+    .botResponse {
+        font-size: 1.3rem;
+        line-height: 1.7;
+    }
+
+    .responseHeading {
+        font-size: 1.7rem;
+        margin-top: 1.8rem;
+    }
+
+    .codeBlock {
+        max-width: 100%;
+    }
+
+    .codeBlock pre {
+        padding: 1.2rem;
+    }
+
+    .codeBlock code {
+        font-size: 1.1rem;
     }
 
     .inp {
@@ -246,15 +558,32 @@ body {
     }
 }
 
-/* Extra small phones */
+
+/* =======================================================
+   EXTRA SMALL PHONES
+======================================================= */
+
 @media (max-width: 400px) {
+
     .chat {
         padding: 1.2rem;
         font-size: 1.2rem;
     }
+
     .chatImg {
         width: 2.7rem;
+        min-width: 2.7rem;
+        height: 2.7rem;
     }
+
+    .botResponse {
+        font-size: 1.2rem;
+    }
+
+    .responseHeading {
+        font-size: 1.6rem;
+    }
+
     .inp > input {
         font-size: 1.25rem;
     }
